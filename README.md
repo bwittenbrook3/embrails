@@ -1,24 +1,5 @@
-# README
+# Embrails
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+http://embrails.com
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Welcome to embrails, the first ever live blog for developing a Ruby on Rails backed ember.js application. Throughout the next few months we will be working on taking a vanilla rails 5.0 install to a full blown ember.js blogging platform, and you will be part of the journey.
