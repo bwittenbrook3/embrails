@@ -1,0 +1,40 @@
+<h1>v0.1 - Hello, World!</h1>
+<h3>Posted by <a href="https://github.com/bwittenbrook3">Bradley Wittenbrook</a> on July 25, 2016 @ 5:11 pm</h3>
+
+<p>Welcome to embrails, the first ever live blog for developing a Ruby on Rails backed ember.js application. Throughout the next few months we will be working on taking a vanilla rails 5.0 install to a full blown ember.js blogging platform, and you will be part of the journey.</p>
+
+<h2>Creating the rails app</h2>
+
+<pre>
+$ rails new embrails --database=postgresql
+$ cd embrails
+$ git init
+$ git remote add origin https://github.com/bwittenbrook3/embrails.git
+$ git add .
+$ git commit -m "Initial Commit"
+</pre>
+
+<p>Great now we have a vanilla rails 5.0 application, and have it version controlled on github! Firing up rails with rails s give us the default welcome page.</p>
+
+<img src="assets/images/v0.1/riding_rails.png">
+
+<h2>Deploying to heroku</h2>
+
+<p>Download the heroku toolbelt - <a href="https://toolbelt.heroku.com/">https://toolbelt.heroku.com/</a></p>
+
+<pre>
+$ heroku create
+$ heroku apps:rename embrails
+</pre>
+
+<p>Awesome, now to add in this first post: <a href="https://github.com/bwittenbrook3/embrails/commit/0c1824fe071e1d514474052959da49ca1cdf6703">https://github.com/bwittenbrook3/embrails/commit/0c1824fe071e1d514474052959da49ca1cdf6703</a>.</p>
+
+<p>Finally, lets deploy to heroku:</p>
+
+<pre>
+$ git push heroku master
+</pre>
+
+<p>In our next post, we will work on setting up ember, adding it to the heroku build process, and writing our first integration tests. Until next time!</p>
+
+<p>Source code here: <a href="https://github.com/bwittenbrook3/embrails/tree/v0.1">https://github.com/bwittenbrook3/embrails/tree/v0.1</a></p>

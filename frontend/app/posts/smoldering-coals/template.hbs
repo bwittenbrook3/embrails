@@ -1,0 +1,84 @@
+<h1>v0.2 Smoldering coals</h1>
+<h3>Posted by <a href="https://github.com/bwittenbrook3">Bradley Wittenbrook</a> on July 25, 2016 @ 11:29 pm</h3>
+
+<p>So our first post, {{#link-to 'posts.hello-world'}}v0.1 - Hello World{{/link-to}}, ended with us deploying our pretty vanilla hello world rails app to heroku. Let's take a look:</p>
+
+<img src="assets/images/v0.2/where-we-are-at.png">
+
+<p>Not super exciting, let's spice things up a bit and add in <a href="http://emberjs.com/">ember.js</a>.</p>
+
+<blockquote>
+A framework for creating <b>ambitious</b> web applications.
+</blockquote>
+
+<h2>Why ember.js?</h2>
+
+<p>Ember.js takes many of the rails best practices and applies them to the continuously evolving javascript world. From convention over configuration, cli driven workflows, and stability without stagnation ember.js is a natural complement to those familiar with Ruby on Rails.</p>
+
+<h2>Adding it to our project</h2>
+
+<p>From the root of our project:</p>
+
+<pre>
+$ ember new frontend --skip-git
+</pre>
+
+<p>This will bootstrap our ember application within the frontend folder, and install necessary dependencies. We can verify everyting is working by firing up ember s.</p>
+
+<img src="assets/images/v0.2/hello-ember.png">
+
+<p>Now that we have ember installed and working we need to find a way to merge have rails serve our ember application. We will use thoughbot's <a href="https://github.com/thoughtbot/ember-cli-rails">ember-cli-rails</a> gem to help with this.</p>
+
+<p>Add the following to Gemfile:</p>
+
+<pre>
+gem "ember-cli-rails", :git => 'https://github.com/thoughtbot/ember-cli-rails.git', :branch => 'sd-rails-5', :ref => '6822c1c2ff8e88b95aa6c527a51386f4d75973ab'
+</pre>
+
+
+<p><em><b>Note:</b> As of July 25, 2016, the ember-cli-rails team has not yet merged rails 5 support into the master branch, we will switch to the latest version that supports it whenever this branch is merged.</em></p>
+
+<p>Then run the following from the command line:</p>
+
+<pre>
+$ bundle install
+$ rails generate ember:init
+$ cd frontend
+$ ember install ember-cli-rails-addon
+$ cd ..
+$ rake ember:install
+</pre>
+
+<p>This set of commands will add in the ember-cli-rails gem to our application, initialize the addon, and install the dependent addon to ember. Let checkout out where we are so far:</p>
+
+<img src="assets/images/v0.2/deprecation.png">
+
+<p>Hmmm, looks like there is a depreciation since ember data 2.7.0 has been release before ember 2.7.0. We can solve that two ways,</p>
+
+<ol>
+  <li>Pin ember data to 2.6.2 to match ember</li>
+  <li>Fix the depreciation as specified</li>
+</ol>
+
+<p>Lets go for that latter,
+<a href="https://github.com/bwittenbrook3/embrails/commit/b85bb7f0a291c1452f398bca27f8f43418b38824">https://github.com/bwittenbrook3/embrails/commit/b85bb7f0a291c1452f398bca27f8f43418b38824</a>.</p>
+
+<p>Awesome! Checking back once we fixed that issue we see no deprecations. Lets add in an index route to ember so we can see something other than a blank page.</p>
+
+<p>The first thing we are going to do is remove ember cli welcome page,
+<a href="https://github.com/bwittenbrook3/embrails/commit/55b9985e3ecd6eaacc5800f870f3cd3f1e38dce4">https://github.com/bwittenbrook3/embrails/commit/55b9985e3ecd6eaacc5800f870f3cd3f1e38dce4</a>.</p>
+
+<p>For this application we will be utilizing the pod structure in ember. In short this groups our files within ember into logical structures (<a href="https://ember-cli.com/user-guide/#pod-structure"> https://ember-cli.com/user-guide/#pod-structure</a>). Normally ember g route will generate separate files in a few different directories, you can specify to use pods by passing in the --pods flag to each ember generator. I prefer to do this by default, so lets update our .ember-cli config so we don't have to add in that flag each time.
+<a href="https://github.com/bwittenbrook3/embrails/commit/e7e4246175a2497469a14417b0da18bdf0265118">https://github.com/bwittenbrook3/embrails/commit/e7e4246175a2497469a14417b0da18bdf0265118</a></p>
+
+<p>Brilliant, now we need to add in our first post that we built in our v0.1. We will take a very simplistic approach for now and have our index page list all posts, and we will generate a route to each post.</p>
+
+<pre>
+$ ember g route application
+$ ember g route posts
+$ ember g route posts/index
+$ ember g route posts/hello-world
+$ ember g route posts/smoldering-coals
+</pre>
+
+Great, lets add in some content to each of those generated files.
