@@ -1,4 +1,4 @@
-<h1>v0.2 Smoldering coals</h1>
+<h1>v0.2 - Smoldering coals</h1>
 <h3>Posted by <a href="https://github.com/bwittenbrook3">Bradley Wittenbrook</a> on July 25, 2016 @ 11:29 pm</h3>
 
 <p>So our first post, {{#link-to 'posts.hello-world'}}v0.1 - Hello World{{/link-to}}, ended with us deploying our pretty vanilla hello world rails app to heroku. Let's take a look:</p>
@@ -97,3 +97,9 @@ $ heroku buildpacks:add --index 2 heroku/ruby
 $ heroku config:set NPM_CONFIG_PRODUCTION=false
 $ heroku config:unset SKIP_EMBER
 </pre>
+
+<p>With that chain of commands, we have integrated ember into our heroku build process:  <a href="https://github.com/bwittenbrook3/embrails/commit/2e64fb516964d4b473d91b76186e111e84ea7458">https://github.com/bwittenbrook3/embrails/commit/2e64fb516964d4b473d91b76186e111e84ea7458</a>. We deploy to heroku again with git push heroku master, and we see that everything looks great!</p>
+
+<img src="assets/images/v0.2/result.png">
+
+<p>In our next post we will setup our application to use Digital Ocean with continuous integration and add in some styling updates.</p>
