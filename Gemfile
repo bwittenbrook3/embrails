@@ -27,6 +27,9 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+# Unify your EmberCLI and Rails
+gem "ember-cli-rails", git: 'https://github.com/thoughtbot/ember-cli-rails.git', branch: 'sd-rails-5', ref: '6822c1c2ff8e88b95aa6c527a51386f4d75973ab'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
