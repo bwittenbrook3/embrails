@@ -81,4 +81,19 @@ $ ember g route posts/hello-world
 $ ember g route posts/smoldering-coals
 </pre>
 
-Great, lets add in some content to each of those generated files.
+<p>Great, lets add in some content to each of those generated files: <a href="https://github.com/bwittenbrook3/embrails/commit/1731d317f4b2715d16e19c0724bc097242ac735b">https://github.com/bwittenbrook3/embrails/commit/1731d317f4b2715d16e19c0724bc097242ac735b</a></p>
+
+<p>Now we have a very basic ember.js blog served from a rails 5.0 applicaiton, good job!</p>
+
+<h2>Adding ember to the heroku build process</h2>
+
+<p>Following the process as described in the ember-cli-rails readme, we need to run the following commands to set up our application to have ember added to the heroku buildpack.</p>
+
+<pre>
+$ rails generate ember:heroku
+$ heroku buildpacks:clear
+$ heroku buildpacks:add --index 1 heroku/nodejs
+$ heroku buildpacks:add --index 2 heroku/ruby
+$ heroku config:set NPM_CONFIG_PRODUCTION=false
+$ heroku config:unset SKIP_EMBER
+</pre>
