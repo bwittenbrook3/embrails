@@ -19,9 +19,9 @@ A framework for creating <b>ambitious</b> web applications.
 
 <p>From the root of our project:</p>
 
-<pre>
-$ ember new frontend --skip-git
-</pre>
+{{#code-snippet lang="bash"}}
+ember new frontend --skip-git
+{{/code-snippet}}
 
 <p>This will bootstrap our ember application within the frontend folder, and install necessary dependencies. We can verify everyting is working by firing up ember s.</p>
 
@@ -31,23 +31,23 @@ $ ember new frontend --skip-git
 
 <p>Add the following to Gemfile:</p>
 
-<pre>
+{{#code-snippet lang="ruby"}}
+# Gemfile
 gem "ember-cli-rails", :git => 'https://github.com/thoughtbot/ember-cli-rails.git', :branch => 'sd-rails-5', :ref => '6822c1c2ff8e88b95aa6c527a51386f4d75973ab'
-</pre>
+{{/code-snippet}}
 
 
 <p><em><b>Note:</b> As of July 25, 2016, the ember-cli-rails team has not yet merged rails 5 support into the master branch, we will switch to the latest version that supports it whenever this branch is merged.</em></p>
 
 <p>Then run the following from the command line:</p>
 
-<pre>
-$ bundle install
-$ rails generate ember:init
-$ cd frontend
-$ ember install ember-cli-rails-addon
-$ cd ..
-$ rake ember:install
-</pre>
+{{#code-snippet lang="ruby"}}
+bundle install
+rails generate ember:init
+cd frontend
+ember install ember-cli-rails-addon
+rake ember:install
+{{/code-snippet}}
 
 <p>This set of commands will add in the ember-cli-rails gem to our application, initialize the addon, and install the dependent addon to ember. Let checkout out where we are so far:</p>
 
@@ -73,13 +73,13 @@ $ rake ember:install
 
 <p>Brilliant, now we need to add in our first post that we built in our v0.1. We will take a very simplistic approach for now and have our index page list all posts, and we will generate a route to each post.</p>
 
-<pre>
-$ ember g route application
-$ ember g route posts
-$ ember g route posts/index
-$ ember g route posts/hello-world
-$ ember g route posts/smoldering-coals
-</pre>
+{{#code-snippet lang="bash"}}
+ember g route application
+ember g route posts
+ember g route posts/index
+ember g route posts/hello-world
+ember g route posts/smoldering-coals
+{{/code-snippet}}
 
 <p>Great, lets add in some content to each of those generated files: <a href="https://github.com/bwittenbrook3/embrails/commit/1731d317f4b2715d16e19c0724bc097242ac735b">https://github.com/bwittenbrook3/embrails/commit/1731d317f4b2715d16e19c0724bc097242ac735b</a></p>
 
@@ -89,14 +89,14 @@ $ ember g route posts/smoldering-coals
 
 <p>Following the process as described in the ember-cli-rails readme, we need to run the following commands to set up our application to have ember added to the heroku buildpack.</p>
 
-<pre>
-$ rails generate ember:heroku
-$ heroku buildpacks:clear
-$ heroku buildpacks:add --index 1 heroku/nodejs
-$ heroku buildpacks:add --index 2 heroku/ruby
-$ heroku config:set NPM_CONFIG_PRODUCTION=false
-$ heroku config:unset SKIP_EMBER
-</pre>
+{{#code-snippet lang="bash"}}
+rails generate ember:heroku
+heroku buildpacks:clear
+heroku buildpacks:add --index 1 heroku/nodejs
+heroku buildpacks:add --index 2 heroku/ruby
+heroku config:set NPM_CONFIG_PRODUCTION=false
+heroku config:unset SKIP_EMBER
+{{/code-snippet}}
 
 <p>With that chain of commands, we have integrated ember into our heroku build process:  <a href="https://github.com/bwittenbrook3/embrails/commit/2e64fb516964d4b473d91b76186e111e84ea7458">https://github.com/bwittenbrook3/embrails/commit/2e64fb516964d4b473d91b76186e111e84ea7458</a>. We deploy to heroku again with git push heroku master, and we see that everything looks great!</p>
 

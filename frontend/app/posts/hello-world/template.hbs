@@ -5,14 +5,14 @@
 
 <h2>Creating the rails app</h2>
 
-<pre>
-$ rails new embrails --database=postgresql
-$ cd embrails
-$ git init
-$ git remote add origin https://github.com/bwittenbrook3/embrails.git
-$ git add .
-$ git commit -m "Initial Commit"
-</pre>
+{{#code-snippet lang="bash"}}
+rails new embrails --database=postgresql
+cd embrails
+git init
+git remote add origin https://github.com/bwittenbrook3/embrails.git
+git add .
+git commit -m "Initial Commit"
+{{/code-snippet}}
 
 <p>Great now we have a vanilla rails 5.0 application, and have it version controlled on github! Firing up rails with rails s give us the default welcome page.</p>
 
@@ -22,18 +22,18 @@ $ git commit -m "Initial Commit"
 
 <p>Download the heroku toolbelt - <a href="https://toolbelt.heroku.com/">https://toolbelt.heroku.com/</a></p>
 
-<pre>
-$ heroku create
-$ heroku apps:rename embrails
-</pre>
+{{#code-snippet lang="bash"}}
+heroku create
+heroku apps:rename embrails
+{{/code-snippet}}
 
 <p>Awesome, now to add in this first post: <a href="https://github.com/bwittenbrook3/embrails/commit/0c1824fe071e1d514474052959da49ca1cdf6703">https://github.com/bwittenbrook3/embrails/commit/0c1824fe071e1d514474052959da49ca1cdf6703</a>.</p>
 
 <p>Finally, lets deploy to heroku:</p>
 
-<pre>
-$ git push heroku master
-</pre>
+{{#code-snippet lang="bash"}}
+git push heroku master
+{{/code-snippet}}
 
 <img src="assets/images/v0.1/result.png">
 

@@ -1,0 +1,24 @@
+@import "semantic";
+@import "github-gist";
+@import "pod-styles";
+
+p {
+  font-size: 1.15em;
+  line-height: 1.8em;
+}
+
+ul, ol {
+  font-size: 1.2em;
+  line-height: 1.8em;
+}
+
+blockquote {
+  font-size: 2.0em;
+  line-height: 3.0em;
+}
+
+img {
+  width:75%;
+  margin:0 auto;
+  display:block;
+}
