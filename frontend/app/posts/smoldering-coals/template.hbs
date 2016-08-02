@@ -1,9 +1,13 @@
 <h1 class="blog-title ui header">v0.2 - Smoldering coals</h1>
-<h3>Posted by <a href="https://github.com/bwittenbrook3">Bradley Wittenbrook</a> on July 25, 2016 @ 11:29 pm</h3>
+<ul class="blog-post-meta">
+  <li class="meta-item">
+    July 25, 2016
+  </li>
+</ul>
 
 <p>So our first post, {{#link-to 'posts.hello-world'}}v0.1 - Hello World{{/link-to}}, ended with us deploying our pretty vanilla hello world rails app to heroku. Let's take a look:</p>
 
-<img src="assets/images/v0.2/where-we-are-at.png">
+<img class="centered" src="assets/images/v0.2/where-we-are-at.png">
 
 <p>Not super exciting, let's spice things up a bit and add in <a href="http://emberjs.com/">ember.js</a>.</p>
 
@@ -25,7 +29,7 @@ ember new frontend --skip-git
 
 <p>This will bootstrap our ember application within the frontend folder, and install necessary dependencies. We can verify everyting is working by firing up ember s.</p>
 
-<img src="assets/images/v0.2/hello-ember.png">
+<img class="centered" src="assets/images/v0.2/hello-ember.png">
 
 <p>Now that we have ember installed and working we need to find a way to merge have rails serve our ember application. We will use thoughbot's <a href="https://github.com/thoughtbot/ember-cli-rails">ember-cli-rails</a> gem to help with this.</p>
 
@@ -51,7 +55,7 @@ rake ember:install
 
 <p>This set of commands will add in the ember-cli-rails gem to our application, initialize the addon, and install the dependent addon to ember. Let checkout out where we are so far:</p>
 
-<img src="assets/images/v0.2/deprecation.png">
+<img class="centered" src="assets/images/v0.2/deprecation.png">
 
 <p>Hmmm, looks like there is a depreciation since ember data 2.7.0 has been release before ember 2.7.0. We can solve that two ways,</p>
 
@@ -100,7 +104,7 @@ heroku config:unset SKIP_EMBER
 
 <p>With that chain of commands, we have integrated ember into our heroku build process:  <a href="https://github.com/bwittenbrook3/embrails/commit/2e64fb516964d4b473d91b76186e111e84ea7458">https://github.com/bwittenbrook3/embrails/commit/2e64fb516964d4b473d91b76186e111e84ea7458</a>. We deploy to heroku again with git push heroku master, and we see that everything looks great!</p>
 
-<img src="assets/images/v0.2/result.png">
+<img class="centered" src="assets/images/v0.2/result.png">
 
 <p>In our next post we will setup our application to use Digital Ocean with continuous integration and add in some styling updates.</p>
 

@@ -6,6 +6,9 @@ body {
   background-color: #fcfcfc;
 }
 
+svg {
+  color: #999;
+}
 p {
   font-size: 1.15em;
   line-height: 1.6em;
@@ -22,23 +25,36 @@ blockquote {
   line-height: 3.0em;
 }
 
-img {
+a {
+  color:#5eb1bf;
+  &:hover {
+    color:#5eb1bf;
+    text-decoration: underline;
+  }
+}
+
+img.centered {
   width:75%;
   margin:0 auto;
   display:block;
 }
 
+a:hover > h1.ui.header.logo {
+  text-decoration: none;
+}
 a > h1.ui.header.logo {
   margin: 30px 0;
   &:hover {
     color:#5eb1bf;
+    text-decoration: none;
   }
 
 }
 
 h1.ui.header.blog-title {
-  color: #4078c0;
+  color: #fd823c;
   text-decoration: none;
+  margin-bottom: 0;
 }
 
 .avatar-img {
@@ -66,5 +82,24 @@ h1.ui.header.blog-title {
       color:#5eb1bf;
       text-decoration: underline;
     }
+  }
+}
+
+
+.blog-post-meta {
+  padding-left: 0;
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: #999;
+  list-style: none;
+
+  .meta-item {
+    display: inline;
+    padding-right: 20px;
+  }
+
+  .author-avatar {
+    vertical-align: top;
+    border-radius: 3px;
   }
 }
