@@ -9,6 +9,7 @@ Router.map(function() {
   this.route('posts', {path: "/"}, function() {
     this.route('hello-world');
     this.route('smoldering-coals');
+    this.route('semantic-styles');
   });
 });
 

@@ -4,11 +4,13 @@
 
 body {
   background-color: #fcfcfc;
+  padding-bottom: 30px;
 }
 
-svg {
-  color: #999;
+.overview {
+  font-size: 2.8em;
 }
+
 p {
   font-size: 1.15em;
   line-height: 1.6em;
@@ -22,7 +24,7 @@ ul, ol {
 
 blockquote {
   font-size: 2.0em;
-  line-height: 3.0em;
+  line-height: 1.2em;
 }
 
 a {
