@@ -1,3 +1,26 @@
+<header>
+  <div class="ui container">
+    <div class="avatar">
+      <a href="https://github.com/bwittenbrook3">
+        <div class="avatar-img"></div>
+        <div class="avatar-desc">Bradley Wittenbrook</div>
+      </a>
+    </div>
+
+    {{#link-to "posts"}}
+      <h1 class="ui header logo">
+        embrails
+        <div class="sub header">
+          ember - rails - postgresql
+        </div>
+      </h1>
+    {{/link-to}}
+  </div>
+</header>
+
+<div class="ui divider"></div>
+
 <div class="ui container">
+
   {{outlet}}
 </div>

@@ -2,9 +2,14 @@
 @import "github-gist";
 @import "pod-styles";
 
+body {
+  background-color: #fcfcfc;
+}
+
 p {
   font-size: 1.15em;
-  line-height: 1.8em;
+  line-height: 1.6em;
+  color: #444;
 }
 
 ul, ol {
@@ -21,4 +26,45 @@ img {
   width:75%;
   margin:0 auto;
   display:block;
+}
+
+a > h1.ui.header.logo {
+  margin: 30px 0;
+  &:hover {
+    color:#5eb1bf;
+  }
+
+}
+
+h1.ui.header.blog-title {
+  color: #4078c0;
+  text-decoration: none;
+}
+
+.avatar-img {
+  margin: 0 auto;
+	width: 60px;
+	height: 60px;
+	border-radius: 30px;
+	-webkit-border-radius: 30px;
+	-moz-border-radius: 30px;
+	background: url('images/headshot.png') no-repeat;
+  background-size:cover;
+  margin-bottom: 5px;
+}
+
+.avatar {
+  margin-top: -10px;
+  float: right;
+
+
+  a {
+    display: block;
+    color: rgba(0, 0, 0, 0.6);
+    text-align: center;
+    &:hover {
+      color:#5eb1bf;
+      text-decoration: underline;
+    }
+  }
 }
